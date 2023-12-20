@@ -7,8 +7,8 @@ import LandingPage from './components/screens/LandingPage';
 function App() {
   return (
     <>
-      <AppHeader/>
-        <LandingPage/>
+      {/* <AppHeader/>
+        <LandingPage/> */}
 
         {/* <Login />
         <SignUp />
