@@ -2,6 +2,10 @@
   font-family: 'Libre Bodoni';
   src: url('../public/fonts/LibreBodoni-VariableFont_wght.ttf');
 }
+@font-face {
+  font-family: 'David Libre';
+  src: url('../public/fonts/DavidLibre-Regular.ttf');
+}
 * {
   padding: 0;
   margin: 0;
@@ -24,12 +28,12 @@ section {
 flex-shrink: 0;
 }
 .header {
+  position: fixed;
   background: #9E9F9A;
 height: 99px;
 display: flex;
   justify-content: space-between;
   align-items: center;
-  
   width: 100%;
 }
 .headerLogo {
@@ -58,4 +62,100 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 padding-left: 20px;
+}
+
+
+
+.landing {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.landingHero {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 775px;
+height: 315px;
+margin-bottom: 76px;
+
+}
+.landingHero h1 {
+  color: #000;
+
+text-align: center;
+font-family: Libre Bodoni;
+font-size: 79px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.landingSubhero {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46px;
+}
+.landingSubhero h2 {
+  color: #000;
+
+font-family: Libre Bodoni;
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.landingSubhero div {
+  border-radius: 40px;
+background: #000;
+width: 4px;
+height: 148px;
+margin-left: 57px;
+margin-right: 57px;
+
+}
+.landingSubhero h3 {
+  width: 406px;
+  color: #000;
+  text-align: justify;
+font-family: David Libre;
+font-size: 28px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.landingRecipes {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  
+
+}
+.landingRecipes h1 {
+  color: #000;
+
+text-align: center;
+font-family: Libre Bodoni;
+font-size: 29px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+#landingRecipesTitle {
+  margin-bottom: 7px;
+}
+.landingRecipesOther {
+  display: flex;
+height: 66px;
+align-items: center;
+justify-content: center;
+}
+.separator {
+  height: 5px;
+width: 642.195px;
+  border-radius: 40px;
+background: #000;
 }
