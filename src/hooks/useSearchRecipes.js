@@ -3,7 +3,13 @@ import { useCallback, useContext } from 'react';
 import { GlobalContext } from "../context/globalContext"
 
 const fetchRecipes = (searchTerm) => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
+    let url;
+    if(searchTerm) {
+        url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
+    }
+    else {
+        url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
+    }
     return axios.get(url);
 }    
 const useGetRecipe = () => {
