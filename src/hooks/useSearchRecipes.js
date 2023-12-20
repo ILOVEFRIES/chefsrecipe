@@ -4,12 +4,7 @@ import { GlobalContext } from "../context/globalContext"
 
 const fetchRecipes = (searchTerm) => {
     let url;
-    if(searchTerm) {
-        url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
-    }
-    else {
-        url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`;
-    }
+    url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
     return axios.get(url);
 }    
 const useGetRecipe = () => {
