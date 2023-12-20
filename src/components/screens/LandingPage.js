@@ -1,6 +1,8 @@
 import React from 'react'
+import RecipeCell from '../RecipeCell'
 
 const LandingPage = () => {
+    
   return (
     <section className='landing'>
         <div className='landingHero'>
@@ -16,6 +18,7 @@ const LandingPage = () => {
         </div>
         <div className='landingRecipes'>
             <h1 id='landingRecipesTitle'>RECIPE OF THE DAY</h1>
+            <RecipeCell/>
             <div className='separator'></div>
             <div className='landingRecipesOther'>
                 <h1>OTHER RECIPES</h1>
