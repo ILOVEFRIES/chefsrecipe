@@ -1,16 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './components/auth/Login';
+import SignUp from './components/auth/SignUp';
+import AuthDetails from './components/auth/AuthDetails';
 
 function App() {
   return (
-    <>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>TEST</p>
-      </header>
+    <div className='App'>
+      <Login />
+      <SignUp />
+      <AuthDetails />
     </div>
-    </>
   );
 }
 
