@@ -2,25 +2,20 @@ import axios from 'axios';
 import { useCallback, useContext } from 'react';
 import { GlobalContext } from "../context/globalContext"
 
-const fetchIdRecipe = (recipeId) => {
-    let url;
-    if (recipeId) {
-        url = `www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
-    } else {
-        url = `www.themealdb.com/api/json/v1/1/random.php`;
-    }    
+const fetchRecipes = (searchTerm) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
     return axios.get(url);
 }    
 const useGetRecipe = () => {
     const {state, updateState} = useContext(GlobalContext);
     const { recipe: {data, isLoading = false} = {}} = state;
     const getRecipe = useCallback(
-        (recipeId)=>{
+        (searchTerm)=>{
             updateState({
                 isLoading: true,
             });
 
-            return fetchIdRecipe(recipeId)
+            return fetchRecipes(searchTerm)
             .then((res)=>{
                 const { data } = res;
 
