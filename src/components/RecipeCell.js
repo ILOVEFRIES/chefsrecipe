@@ -1,13 +1,21 @@
 import React from 'react'
 import RecipePage from './screens/RecipePage'
+import { addHistory } from '../utilities/addHistory'
+import { useUser } from '../context/globalContext'
 
 const RecipeCell = (props) => {
+  const { currentUser } = useUser();
+  const userId = currentUser?.uid;
+
   return (
     <div 
     style={{
       cursor:'pointer',
     }}
-    onClick={() => props.changePage(<RecipePage recipe={props.recipe} changePage={(page) => props.changePage(page)}/>)}
+    onClick={async () => {
+      props.changePage(<RecipePage recipe={props.recipe} changePage={(page) => props.changePage(page)}/>)
+      await addHistory(userId,props.recipe.strMeal);
+  }}
     className='recipeCell'>
       <div className='separator'/>
       <div className='recipeTitle'>

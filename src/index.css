@@ -58,13 +58,20 @@ font-weight: 700;
 line-height: normal;
 }
 .headerProfile {
-  width: 55px;
+  width: 75px;
 height: 55px;
 flex-shrink: 0;
   border-radius: 89px;
 background: #D9D9D9;
 cursor:pointer;
 margin-right: 50px;
+display:flex;
+justify-content: center;
+align-items: center;
+font-family: 'Libre Bodoni';
+padding-left: 5px;
+padding-right: 5px;
+
 }
 .headerSearchBar {
   color: #000;
@@ -260,7 +267,7 @@ letter-spacing: 0.6px;
 }
 
 .catalogFlex {
-transform: scale(70%) translateY(-980px);
+transform: scale(70%) translateY(-20%);
   
   display: flex;
   justify-content: center;

@@ -35,7 +35,7 @@ const LandingPage = (props) => {
             className='landingRecipesOther' >
                 <h1>OTHER RECIPES</h1>
             </div>
-            <div className='separator'></div>
+            <div className='separator' ></div>
         </div>
     </section>
   )

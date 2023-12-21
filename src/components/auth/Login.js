@@ -2,18 +2,24 @@ import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import '../../auth.css';
+import LandingPage from '../screens/LandingPage';
+import SignUp from './SignUp';
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const logIn = async (e) => {
     e.preventDefault();
-
+    
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log(userCredential);
+      
+      props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>);
+      props.showing(true);
+
     } catch (error) {
       let errorMessage = error.message.replace('Firebase: ', '').replace('auth/', '');
 
@@ -44,6 +50,9 @@ const Login = () => {
       const token = credential.accessToken;
       const user = result.user;
       console.log(result);
+      
+      props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>);
+      props.showing(true);
     } catch (error) {
       console.error(error);
     }
@@ -51,7 +60,15 @@ const Login = () => {
 
   return (
     <>
-      <div className='back-button'></div>
+      <div className='back-button'
+      style={{
+        cursor:'pointer'
+      }}
+      onClick={() => {
+        props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>);
+        props.showing(true);
+      }}
+      ></div>
       <div className='log-in-page'>
         <div className='log-in-container'>
           <form onSubmit={logIn}>
@@ -75,12 +92,21 @@ const Login = () => {
             <div className='error-message-container'>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
-              <button className='log-in-button' type='submit'>LOG IN</button>
+              <button 
+              className='log-in-button' type='submit'>LOG IN</button>
           </form>
             <div className='google-sign-in-button' onClick={signInWithGoogle}>
               <div className='google-icon'></div>
             </div>
-          <div className='create-account'><p>Create an account</p></div>
+          <div 
+          style={{
+            cursor:'pointer'
+          }}
+          onClick={() => {
+            props.changePage(<SignUp changePage={(page) => props.changePage(page)} showing={(bol)=>props.showing(bol)}/>);
+            props.showing(false);
+          }}
+          className='create-account'><p>Create an account</p></div>
         </div>
       </div>
     </>

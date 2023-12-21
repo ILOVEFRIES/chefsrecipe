@@ -17,7 +17,7 @@ const CatalogPage = (props) => {
     // });
     useEffect(() => {
         getIngSearch();
-        getSearch('');
+        getSearch(props.search);
     }, [])
     useEffect(()=> {
         if(searchData)setCurrPage(<CatalogRecipe/>);

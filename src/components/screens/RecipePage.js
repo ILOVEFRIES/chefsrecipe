@@ -3,6 +3,7 @@ import IngredientCell from '../IngredientCell'
 import RecipeCell from '../RecipeCell';
 import useSearchRecipes from '../../hooks/useSearchRecipes';
 
+
 const RecipePage = (props) => {
     const {data: searchData, getSearch} = useSearchRecipes();
         useEffect(() => {

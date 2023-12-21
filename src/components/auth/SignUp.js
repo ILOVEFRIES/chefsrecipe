@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { initialHistory } from '../../utilities/initialHistory';
+import LandingPage from '../screens/LandingPage';
+import Login from './Login';
 
 
-export const SignUp = () => {
+export const SignUp = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -15,7 +17,9 @@ export const SignUp = () => {
             .then(async(userCredential) => {
                 console.log(userCredential);
                 await initialHistory(userCredential.user.uid);
-
+                
+                props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>);
+                props.showing(true);
 
             })
             .catch((error) => {
@@ -45,7 +49,14 @@ export const SignUp = () => {
 
     return (
         <>
-        <div className='back-button'></div>
+        <div className='back-button'  
+        style={{
+            cursor:'pointer'
+          }}
+        onClick={() => {
+        props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>);
+        props.showing(true);
+      }}></div>
         <div className='sign-up-page'>
             <div className='sign-up-container'>
             <form onSubmit={signUp}>
@@ -70,7 +81,15 @@ export const SignUp = () => {
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
                 <button className='sign-up-button' type='submit'>SIGN UP</button>
-                <div className='have-account'><p>Already have an account?</p></div>
+                <div 
+                style={{
+                    cursor:'pointer'
+                  }}
+                onClick={() => {
+                    props.changePage(<Login changePage={(page) => props.changePage(page)} showing={(bol)=>props.showing(bol)}/>);
+                    props.showing(false);
+                  }}
+                className='have-account'><p>Already have an account?</p></div>
             </form>
         </div>
         </div>

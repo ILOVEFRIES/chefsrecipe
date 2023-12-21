@@ -8,17 +8,22 @@ import { useEffect, useState } from 'react';
 import RecipePage from './components/screens/RecipePage';
 
 function App() {
-  const [mainSection, setMainSection] = useState(<div></div>)
+  const [mainSection, setMainSection] = useState(<div></div>);
+  const [showHeader, setshowHeader] = useState(true);
+
   useEffect(() => {
     setMainSection(<LandingPage changePage={(page) => setMainSection(page)}/>);
   }, [])
   return (
     <>
-      {/* <AppHeader/>
-        <LandingPage/> */}
+      {showHeader?<AppHeader 
+      changePage={(page) => setMainSection(page)} 
+      showing={(bol) => setshowHeader(bol)}/>
+      :null}
+        {mainSection}
 
         {/* <Login /> */}
-        <SignUp />
+        {/* <SignUp /> */}
         {/* <AuthDetails /> */}
         {/* <AppHeader/>
       <RecipePage/> */}
