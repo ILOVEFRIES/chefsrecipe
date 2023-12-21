@@ -61,7 +61,7 @@ export const SignUp = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     ></input>
                 </div>
-                <div className='error-msg'>
+                <div className='error-message-container'>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
                 <button className='sign-up-button' type='submit'>SIGN UP</button>

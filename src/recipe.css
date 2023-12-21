@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Libre Bodoni';
+    src: url('../public/fonts/LibreBodoni-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'David Libre';
+    src: url('../public/fonts/DavidLibre-Regular.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.ingredientCell {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 520px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.ingredient1, .ingredient2, .ingredient3 {
+    color: #000;
+    text-align: center;
+    font-family: Libre Bodoni;
+    font-size: 14px;
+    font-style: normal;
+    width:140px;
+}
+
+.ingredientImage1, .ingredientImage2, .ingredientImage3 {
+    background: url('https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 140px;
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+.recipeImage {
+    background: url('https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 520px;
+    margin: 0 auto;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+
+.recipe {
+    padding-top: 150px;
+}
+
+.recipeHero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipePageTitle {
+    color: #000;
+    text-align: center;
+    font-family: Libre Bodoni;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.2px;
+}
+
+.recipeSubtitle {
+    display: flex; 
+    align-items: center;
+    color: #000;
+    text-align: right;
+    font-family: 'Libre Bodoni';
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.62px;
+    margin-left: 300px; 
+}
+
+.flag {
+    width: 37px;
+    height: 40px;
+    background: url('https://www.themealdb.com/images/icons/flags/big/64/jp.png'), lightgray 0% / cover no-repeat;
+    background-size: cover;
+    margin-left: 10px;
+  }
+
+.ingredientsTitle {
+    color: #000;
+    font-family: Libre Bodoni;
+    font-size: 30px;
+    letter-spacing: 0.8px;
+    margin-left: 390px;
+    margin-top: 60px;
+}
+
+.instuctionsTitle {
+    color: #000;
+    font-family: Libre Bodoni;
+    font-size: 30px;
+    letter-spacing: 0.8px;
+    margin-left: 390px;
+    margin-top: 50px;
+}
+
+.instructionsText {
+    width: 520px;
+    margin-left: 390px;
+    margin-right: auto;
+    color: #000;
+    font-family: David Libre;
+    font-size: 20px;
+    font-style: normal;
+    letter-spacing: 0.54px;
+    line-height: 128.75%;
+    letter-spacing: 0.54px;
+    margin-top: 10px;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.otherRecipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: Libre Bodoni;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+

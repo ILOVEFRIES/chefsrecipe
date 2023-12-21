@@ -5,6 +5,7 @@ import AppHeader from './components/AppHeader';
 import LandingPage from './components/screens/LandingPage';
 import CatalogPage from './components/screens/CatalogPage';
 import { useEffect, useState } from 'react';
+import RecipePage from './components/screens/RecipePage';
 
 function App() {
   const [mainSection, setMainSection] = useState(<div></div>)
@@ -19,7 +20,6 @@ function App() {
         {/* <Login />
         <SignUp />
         <AuthDetails /> */}
-      
       </>
   );
 }

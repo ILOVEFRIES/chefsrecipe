@@ -59,7 +59,7 @@ export const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     ></input>
                 </div>
-                <div className='error-msg'>
+                <div className='error-message-container'>
                     {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
                 <button className='log-in-button' type='submit'>LOG IN</button>
