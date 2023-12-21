@@ -9,14 +9,14 @@ import RecipePage from './components/screens/RecipePage';
 function App() {
   return (
     <>
-      <AppHeader/>
-        <LandingPage/>
+      {/* <AppHeader/>
+        <LandingPage/> */}
 
-        {/* <Login />
-        <SignUp />
+        <Login />
+        {/* <SignUp />
         <AuthDetails /> */}
-        <AppHeader/>
-      <RecipePage/>
+        {/* <AppHeader/>
+      <RecipePage/> */}
       </>
   );
 }
