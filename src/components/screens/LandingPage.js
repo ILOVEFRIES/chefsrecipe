@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import RecipeCell from '../RecipeCell'
+import useGetRecipe from '../../hooks/useGetRecipe';
 
 const LandingPage = () => {
-    
+    const {data: recipeData, getRecipe} = useGetRecipe();
+    useEffect(() => {
+        console.log("sent request for 52772")
+        getRecipe('52772');
+        console.log(recipeData);
+    }, [])
+
   return (
+    
     <section className='landing'>
         <div className='landingHero'>
             <h1>WELCOME TO</h1>
@@ -18,7 +26,7 @@ const LandingPage = () => {
         </div>
         <div className='landingRecipes'>
             <h1 id='landingRecipesTitle'>RECIPE OF THE DAY</h1>
-            <RecipeCell/>
+            {recipeData? <RecipeCell recipe={recipeData.meals[0]}/> : null}
             <div className='separator'></div>
             <div className='landingRecipesOther'>
                 <h1>OTHER RECIPES</h1>
