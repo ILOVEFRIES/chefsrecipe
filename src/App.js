@@ -17,9 +17,9 @@ function App() {
       {/* <AppHeader/>
         <LandingPage/> */}
 
-        <Login />
-        {/* <SignUp />
-        <AuthDetails /> */}
+        {/* <Login /> */}
+        <SignUp />
+        {/* <AuthDetails /> */}
         {/* <AppHeader/>
       <RecipePage/> */}
       </>

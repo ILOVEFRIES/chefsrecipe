@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { initialHistory } from '../../utilities/initialHistory';
+
 
 export const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const signUp = (e) => {
+    const signUp = async (e) => {
         e.preventDefault();
-
         createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then(async(userCredential) => {
                 console.log(userCredential);
+                await initialHistory(userCredential.user.uid);
+
+
             })
             .catch((error) => {
                 let errorMessage = error.message.replace('Firebase: ', '').replace('auth/', '');
@@ -34,7 +38,8 @@ export const SignUp = () => {
             
                 console.error(error);
             });
-            
+
+        
             
     };
 
