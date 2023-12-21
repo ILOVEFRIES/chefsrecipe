@@ -9,8 +9,7 @@ function App() {
   return (
     <>
       <AppHeader/>
-      <CatalogPage/>
-        {/* <LandingPage/> */}
+        <LandingPage/>
 
         {/* <Login />
         <SignUp />

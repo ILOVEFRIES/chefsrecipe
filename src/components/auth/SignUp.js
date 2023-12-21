@@ -39,25 +39,37 @@ export const SignUp = () => {
     };
 
     return (
-        <div className='log-in-container'>
+        <>
+        <div className='back-button'></div>
+        <div className='sign-up-page'>
+            <div className='sign-up-container'>
             <form onSubmit={signUp}>
-                <h1>Create an Account</h1>
-                <input
-                    type='email'
-                    placeholder='Enter your email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                ></input>
-                <input
-                    type='password'
-                    placeholder='Enter your password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <button type='submit'>Sign up</button>
-                {errorMessage && <p>{errorMessage}</p>}
+                <div className='sign-up-header'>
+                    <h1>CHEF'S <br/> RECIPE</h1>
+                </div>
+                <div className='input-fields'>
+                    <input
+                        type='email'
+                        placeholder='Enter your email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    ></input>
+                    <input
+                        type='password'
+                        placeholder='Enter your password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                </div>
+                <div className='error-msg'>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                </div>
+                <button className='sign-up-button' type='submit'>SIGN UP</button>
+                <div className='have-account'><p>Already have an account?</p></div>
             </form>
         </div>
+        </div>
+        </>
     );
 };
 

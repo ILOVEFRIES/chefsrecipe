@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import '../../auth.css'; 
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -36,25 +37,37 @@ export const Login = () => {
   };
 
   return (
-    <div className='log-in-container'>
-      <form onSubmit={logIn}>
-        <h1>Log In</h1>
-        <input
-          type='email'
-          placeholder='Enter your email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <input
-          type='password'
-          placeholder='Enter your password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
-        <button type='submit'>Log In</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+    <>
+    <div className='back-button'></div>
+    <div className='log-in-page'>
+        <div className='log-in-container'>
+            <form onSubmit={logIn}>
+                <div className='log-in-header'>
+                    <h1>CHEF'S <br/> RECIPE</h1>
+                </div>
+                <div className='input-fields'>
+                    <input
+                    type='email'
+                    placeholder='Enter your email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    ></input>
+                    <input
+                    type='password'
+                    placeholder='Enter your password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                </div>
+                <div className='error-msg'>
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
+                </div>
+                <button className='log-in-button' type='submit'>LOG IN</button>
+                <div className='create-account'><p>Create an account</p></div>
+            </form>
+        </div>
     </div>
+    </>
   );
 };
 
