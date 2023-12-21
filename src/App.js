@@ -14,13 +14,15 @@ function App() {
   }, [])
   return (
     <>
-      <AppHeader changePage={(page) => setMainSection(page)}/>
-      {mainSection}
-      {/* <RecipePage/> */}
-      {/* <Login />
-      <SignUp />
-      <AuthDetails /> */}
-    </>
+      {/* <AppHeader/>
+        <LandingPage/> */}
+
+        <Login />
+        {/* <SignUp />
+        <AuthDetails /> */}
+        {/* <AppHeader/>
+      <RecipePage/> */}
+      </>
   );
 }
 
