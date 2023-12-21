@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RecipePage from './screens/RecipePage'
 import { addHistory } from '../utilities/addHistory'
 import { useUser } from '../context/globalContext'
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../firebase";
+
 
 const RecipeCell = (props) => {
   const { currentUser } = useUser();
   const userId = currentUser?.uid;
+  const [authUser, setAuthUser] = useState(null);
 
+    useEffect(() => {
+        const listen = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setAuthUser(user);
+            } else {
+                setAuthUser(null);
+            }
+        });
+
+        return () => {
+            listen();
+        };
+    }, []);
   return (
     <div 
     style={{
@@ -14,7 +31,7 @@ const RecipeCell = (props) => {
     }}
     onClick={async () => {
       props.changePage(<RecipePage recipe={props.recipe} changePage={(page) => props.changePage(page)}/>)
-      await addHistory(userId,props.recipe.strMeal);
+      if(authUser)await addHistory(userId,props.recipe.strMeal);
   }}
     className='recipeCell'>
       <div className='separator'/>
@@ -23,7 +40,7 @@ const RecipeCell = (props) => {
         <div className='recipeTitleTags'>
             <h3>{props.recipe?.strCategory?? "-"}{"  "} 
              / {"  "}{props.recipe?.strArea?? "-"}</h3>
-            <div/>
+           
         </div>
       </div>
       <div className='recipeBody'>

@@ -53,8 +53,8 @@ const RecipePage = (props) => {
                 </div>
                 <div className='recipeSubtitle'>
                     <h2>{props.recipe?.strCategory?? "-"}{"  "} 
-             / {"  "}{props.recipe?.strArea?? "-"}e</h2>
-                    <div className='flag'></div>
+             / {"  "}{props.recipe?.strArea?? "-"}</h2>
+                    
                 </div>
             </div>
                 <div className='recipeImage' 
