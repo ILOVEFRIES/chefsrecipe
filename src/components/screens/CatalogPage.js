@@ -9,6 +9,12 @@ const CatalogPage = (props) => {
     const {data: searchIng, getIngSearch} = useSearchIngredients();
     const [currPage, setCurrPage] = useState(<div/>);
     const [pageIndex, setPageIndex] = useState(0);
+
+    
+
+    // useEffect(() => {
+    //     console.log(props.search);
+    // });
     useEffect(() => {
         getIngSearch();
         getSearch('');
@@ -16,8 +22,12 @@ const CatalogPage = (props) => {
     useEffect(()=> {
         if(searchData)setCurrPage(<CatalogRecipe/>);
     }, [searchData])
+    useEffect(()=> {
+        getSearch(props.search? props.search : '');
+        console.log(props.search);
+    }, [props.search])
     const CatalogRecipe = () => {
-        return searchData? searchData.meals.map((meal,key) => {
+        return searchData.meals? searchData.meals.map((meal,key) => {
             return <RecipeCell recipe={meal} key={key} changePage={(page) => props.changePage(page)}/>
         }) : null
     }
