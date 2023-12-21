@@ -4,12 +4,17 @@ import AuthDetails from './components/auth/AuthDetails';
 import AppHeader from './components/AppHeader';
 import LandingPage from './components/screens/LandingPage';
 import CatalogPage from './components/screens/CatalogPage';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [mainSection, setMainSection] = useState(<div></div>)
+  useEffect(() => {
+    setMainSection(<LandingPage/>);
+  }, [])
   return (
     <>
       <AppHeader/>
-        <LandingPage/>
+      {mainSection}
 
         {/* <Login />
         <SignUp />
