@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import useGetRecipe from '../hooks/useGetRecipe'
 import LandingPage from './screens/LandingPage'
@@ -6,13 +6,42 @@ import CatalogPage from './screens/CatalogPage'
 
 
 const AppHeader = (props) => {
-  
+  const [search, setSearch] = useState('');
+
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 'vanilla', label: 'Vanilla' },
+    { value: 'b', label: 'b' },
+    { value: 'a', label: 'a' },
+
   ]
-  
+
+  const [menuIsOpen, setMenuIsOpen] = useState();
+
+  const onInputChange = (
+    inputValue,
+    { action, prevInputValue }
+  ) => {
+    if (action === 'input-change') {
+      props.changePage(
+        <CatalogPage 
+        search = {inputValue}
+        changePage={
+          (page) => props.changePage(page)
+        }
+        />
+      )
+      return inputValue;
+    }
+
+    if (action === 'menu-close') {
+      if (prevInputValue) setMenuIsOpen(true);
+      else setMenuIsOpen(undefined);
+    }
+    
+    return prevInputValue;
+  };
 
   return (
     <section className='header'>
@@ -25,7 +54,25 @@ const AppHeader = (props) => {
         </div>
         <div className='headerSearch'>
           <Select 
-            onFocus={() => props.changePage(<CatalogPage changePage={(page) => props.changePage(page)}/>)}
+            // onChange={(choice) => { console.log(choice);
+            //   props.changePage(
+            //   <CatalogPage 
+            //   search = {choice.value}
+            //   changePage={
+            //     (page) => props.changePage(page)
+            //   }
+            //   />
+            // )}}
+
+            onInputChange={onInputChange}
+
+
+            // onFocus={() => props.changePage(
+            //   <CatalogPage 
+            //   changePage={
+            //     (page) => props.changePage(page)
+            //   }/>
+            // )}
             
             type='text' 
             placeholder='Search Recipe'
