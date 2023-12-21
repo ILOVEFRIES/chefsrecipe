@@ -1,8 +1,14 @@
 import React from 'react'
+import RecipePage from './screens/RecipePage'
 
 const RecipeCell = (props) => {
   return (
-    <div className='recipeCell'>
+    <div 
+    style={{
+      cursor:'pointer',
+    }}
+    onClick={() => props.changePage(<RecipePage recipe={props.recipe} changePage={(page) => props.changePage(page)}/>)}
+    className='recipeCell'>
       <div className='separator'/>
       <div className='recipeTitle'>
         <h2>{props.recipe?.strMeal?? "-"} </h2>

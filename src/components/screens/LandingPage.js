@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import RecipeCell from '../RecipeCell'
 import useGetRecipe from '../../hooks/useGetRecipe';
+import CatalogPage from './CatalogPage';
 
-const LandingPage = () => {
+const LandingPage = (props) => {
     const {data: recipeData, getRecipe} = useGetRecipe();
     useEffect(() => {
         console.log("sent request for 52772")
@@ -26,9 +27,12 @@ const LandingPage = () => {
         </div>
         <div className='landingRecipes'>
             <h1 id='landingRecipesTitle'>RECIPE OF THE DAY</h1>
-            {recipeData? <RecipeCell recipe={recipeData.meals[0]}/> : null}
+            {recipeData? <RecipeCell recipe={recipeData.meals[0]} changePage={(page) => props.changePage(page)}/> : null}
             <div className='separator'></div>
-            <div className='landingRecipesOther'>
+            <div 
+            style={{cursor: 'pointer',}}
+            onClick={() => props.changePage(<CatalogPage changePage={(page) => props.changePage(page)}/>)}
+            className='landingRecipesOther' >
                 <h1>OTHER RECIPES</h1>
             </div>
             <div className='separator'></div>

@@ -286,6 +286,7 @@ cursor: pointer;
 .ingredientCell {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 30px;
   width: 520px;
   margin: 0 auto;
@@ -302,7 +303,7 @@ cursor: pointer;
 }
 
 .ingredientImage1, .ingredientImage2, .ingredientImage3 {
-  background: url('https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg') no-repeat;
+  background: url('https://www.themealdb.com/images/ingredients/Chicken-Small.png') no-repeat;
   background-size: cover;
   background-position: center;
   height: 140px;
@@ -370,7 +371,9 @@ cursor: pointer;
   font-family: Libre Bodoni;
   font-size: 30px;
   letter-spacing: 0.8px;
-  margin-left: 390px;
+  width: 520px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 60px;
 }
 
@@ -379,13 +382,15 @@ cursor: pointer;
   font-family: Libre Bodoni;
   font-size: 30px;
   letter-spacing: 0.8px;
-  margin-left: 390px;
+  width: 520px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 50px;
 }
 
 .instructionsText {
   width: 520px;
-  margin-left: 390px;
+  margin-left: auto;
   margin-right: auto;
   color: #000;
   font-family: David Libre;
@@ -400,6 +405,7 @@ cursor: pointer;
 }
 
 .otherRecipes {
+  transform: scale(70%) translateY(-1650px);
   display: flex;
   flex-direction: column;
   align-items: center;
