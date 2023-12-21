@@ -282,3 +282,246 @@ margin-left: auto;
 margin-right: auto;
 cursor: pointer;
 }
+
+.log-in-page, .sign-up-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.log-in-container, .sign-up-container {
+  width: 600px;
+  height: 700px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  border: 1px solid #000;
+  background: #9E9F9A;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-in-header, .sign-up-header {
+  color: #000;
+  text-align: center;
+  font-family: Libre Bodoni;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-fields input {
+  margin-top: 40px;
+  width: 470px;
+  height: 60px;
+  border-radius: 75px;
+  background: #FFF;
+  border: 0px;
+  padding-left: 20px;
+  font-size: 25px;
+  font-family: Libre Bodoni;
+}
+
+.input-fields input::placeholder {
+  color: #000;
+  font-family: Libre Bodoni;
+  font-size: 25px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.error-message {
+  color: #C30000;
+  font-family: David Libre;
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.log-in-button, .sign-up-button {
+  width: 470px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 33px;
+  background: #D9D9D9;
+  border-width: 0px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  font-family: Libre Bodoni;
+  color: #000;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.create-account, .have-account {
+  margin-top: 10px;
+  color: #000;
+  text-align: center;
+  font-family: David Libre;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.back-button {
+  background-image: url('../public/pngwing.com.png');
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  position: absolute;
+  margin-left: 20px;
+}
+
+.ingredientCell {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 520px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.ingredient1, .ingredient2, .ingredient3 {
+  color: #000;
+  text-align: center;
+  font-family: Libre Bodoni;
+  font-size: 14px;
+  font-style: normal;
+  width:140px;
+}
+
+.ingredientImage1, .ingredientImage2, .ingredientImage3 {
+  background: url('https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 140px;
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+.recipeImage {
+  background: url('https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 520px;
+  margin: 0 auto;
+  border-radius: 12px;
+  margin-top: 50px;
+}
+
+.recipe {
+  padding-top: 150px;
+}
+
+.recipeHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipePageTitle {
+  color: #000;
+  text-align: center;
+  font-family: Libre Bodoni;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.recipeSubtitle {
+  display: flex; 
+  align-items: center;
+  color: #000;
+  text-align: right;
+  font-family: 'Libre Bodoni';
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.62px;
+  margin-left: 300px; 
+}
+
+.flag {
+  width: 37px;
+  height: 40px;
+  background: url('https://www.themealdb.com/images/icons/flags/big/64/jp.png'), lightgray 0% / cover no-repeat;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+.ingredientsTitle {
+  color: #000;
+  font-family: Libre Bodoni;
+  font-size: 30px;
+  letter-spacing: 0.8px;
+  margin-left: 390px;
+  margin-top: 60px;
+}
+
+.instuctionsTitle {
+  color: #000;
+  font-family: Libre Bodoni;
+  font-size: 30px;
+  letter-spacing: 0.8px;
+  margin-left: 390px;
+  margin-top: 50px;
+}
+
+.instructionsText {
+  width: 520px;
+  margin-left: 390px;
+  margin-right: auto;
+  color: #000;
+  font-family: David Libre;
+  font-size: 20px;
+  font-style: normal;
+  letter-spacing: 0.54px;
+  line-height: 128.75%;
+  letter-spacing: 0.54px;
+  margin-top: 10px;
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+.otherRecipes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-family: Libre Bodoni;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
