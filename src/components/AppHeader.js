@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import Select from 'react-select'
 import useGetRecipe from '../hooks/useGetRecipe'
+import LandingPage from './screens/LandingPage'
+import CatalogPage from './screens/CatalogPage'
 
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -14,12 +16,17 @@ const AppHeader = () => {
 
   return (
     <section className='header'>
-        <div className='headerLogo'>
+        <div 
+        style={{cursor:'pointer',}}
+        onClick={() => props.changePage(<LandingPage changePage={(page) => props.changePage(page)}/>)}
+        className='headerLogo'>
           CHEF'S<br/>
           RECIPE
         </div>
         <div className='headerSearch'>
           <Select 
+            onFocus={() => props.changePage(<CatalogPage changePage={(page) => props.changePage(page)}/>)}
+            
             type='text' 
             placeholder='Search Recipe'
             className='headerSearchBar'

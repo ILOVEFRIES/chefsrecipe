@@ -4,7 +4,7 @@ import useSearchRecipes from '../../hooks/useSearchRecipes';
 import useSearchIngredients from '../../hooks/useSearchIngredients';
 import IngredientCell from '../IngredientCell';
 
-const CatalogPage = () => {
+const CatalogPage = (props) => {
     const {data: searchData, getSearch} = useSearchRecipes();
     const {data: searchIng, getIngSearch} = useSearchIngredients();
     const [currPage, setCurrPage] = useState(<div/>);
@@ -18,7 +18,7 @@ const CatalogPage = () => {
     }, [searchData])
     const CatalogRecipe = () => {
         return searchData? searchData.meals.map((meal,key) => {
-            return <RecipeCell recipe={meal} key={key}/>
+            return <RecipeCell recipe={meal} key={key} changePage={(page) => props.changePage(page)}/>
         }) : null
     }
     const CatalogIngredient = () => {

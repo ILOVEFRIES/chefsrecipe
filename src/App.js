@@ -10,17 +10,17 @@ import RecipePage from './components/screens/RecipePage';
 function App() {
   const [mainSection, setMainSection] = useState(<div></div>)
   useEffect(() => {
-    setMainSection(<LandingPage/>);
+    setMainSection(<LandingPage changePage={(page) => setMainSection(page)}/>);
   }, [])
   return (
     <>
-      <AppHeader/>
+      <AppHeader changePage={(page) => setMainSection(page)}/>
       {mainSection}
-
-        {/* <Login />
-        <SignUp />
-        <AuthDetails /> */}
-      </>
+      {/* <RecipePage/> */}
+      {/* <Login />
+      <SignUp />
+      <AuthDetails /> */}
+    </>
   );
 }
 
