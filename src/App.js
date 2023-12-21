@@ -3,13 +3,14 @@ import SignUp from './components/auth/SignUp';
 import AuthDetails from './components/auth/AuthDetails';
 import AppHeader from './components/AppHeader';
 import LandingPage from './components/screens/LandingPage';
+import CatalogPage from './components/screens/CatalogPage';
 import RecipePage from './components/screens/RecipePage';
 
 function App() {
   return (
     <>
-      {/* <AppHeader/>
-        <LandingPage/> */}
+      <AppHeader/>
+        <LandingPage/>
 
         {/* <Login />
         <SignUp />

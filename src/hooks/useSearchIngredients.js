@@ -2,25 +2,25 @@ import axios from 'axios';
 import { useCallback, useContext } from 'react';
 import { GlobalContext } from "../context/globalContext"
 
-const fetchRecipes = (searchTerm) => {
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s= ${searchTerm}`;
-    return axios.get(url);
+const fetchIngredients = () => {
+    const uri = `https://www.themealdb.com/api/json/v1/1/list.php?i=list`;
+    return axios.get(uri);
 }    
-const useSearchRecipes = () => {
+const useSearchIngredients = () => {
     const {state, updateState} = useContext(GlobalContext);
-    const { recipe: {data, isLoading = false} = {}} = state;
-    const getSearch = useCallback(
-        (searchTerm)=>{
+    const { ingredient: {data, isLoading = false} = {}} = state;
+    const getIngSearch = useCallback(
+        ()=>{
             updateState({
                 isLoading: true,
             });
 
-            return fetchRecipes(searchTerm)
+            return fetchIngredients()
             .then((res)=>{
                 const { data } = res;
 
                 updateState({
-                    recipe: {
+                    ingredient: {
                         data,
                         isLoading: false,
                     },
@@ -28,7 +28,7 @@ const useSearchRecipes = () => {
             })
             .catch((error) => {
                 updateState({
-                    recipe: {
+                    ingredient: {
                         error,
                         isLoading: false,
                     },
@@ -38,8 +38,8 @@ const useSearchRecipes = () => {
     );
     return {
         data, 
-        getSearch, 
+        getIngSearch, 
         isLoading
     };
 };
-export default useSearchRecipes;
+export default useSearchIngredients;

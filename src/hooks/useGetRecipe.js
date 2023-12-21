@@ -5,10 +5,11 @@ import { GlobalContext } from "../context/globalContext"
 const fetchIdRecipe = (recipeId) => {
     let url;
     if (recipeId) {
-        url = `www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+        // url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
     } else {
         url = `www.themealdb.com/api/json/v1/1/random.php`;
-    }    
+    }  
+    url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`;  
     return axios.get(url);
 }    
 const useGetRecipe = () => {
@@ -46,4 +47,5 @@ const useGetRecipe = () => {
         getRecipe, 
         isLoading
     };
-}
+};
+export default useGetRecipe;

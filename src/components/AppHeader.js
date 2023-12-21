@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Select from 'react-select'
+import useGetRecipe from '../hooks/useGetRecipe'
 
 
 const AppHeader = () => {
+  
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' }
   ]
+  
+
   return (
     <section className='header'>
         <div className='headerLogo'>
